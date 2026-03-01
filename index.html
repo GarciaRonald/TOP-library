@@ -16,7 +16,34 @@
     </div>
 
     <dialog id="modal">
-        Test Dialog
+        <form method="post">
+            <fieldset>
+                <legend>Provide details for your book:</legend>
+                <div class="field">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="field">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+
+                <div class="field">
+                    <label for="pages">Pages:</label>
+                    <input type="number" id="pages" name="pages">
+                </div>
+
+                <div class="field">
+                    <input type="checkbox" id="read" name="read" value="true">
+                    <label for="read">I've read it!</label>
+                </div>
+            </fieldset>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="button">Cancel</button>
+            </div>
+        </form>
     </dialog>
 </body>
 </html>
