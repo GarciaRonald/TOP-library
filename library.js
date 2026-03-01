@@ -2,6 +2,7 @@ const bookLibrary = [];
 const divLibrary = document.getElementById('library');
 const btnAddBook = document.getElementById('add-new');
 const dialog = document.getElementById('modal');
+const btnCancel = document.getElementById('cancel');
 
 function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -48,5 +49,6 @@ addBookToLibrary('Deathly Hollows', 'JKR', 750, true);
 addBookToLibrary('Cien años de soledad', 'García Márquez', false, false);
 
 btnAddBook.addEventListener('click', () => modal.showModal());
+btnCancel.addEventListener('click', () => modal.close());
 
 displayLibrary();
