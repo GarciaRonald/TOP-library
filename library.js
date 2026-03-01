@@ -37,10 +37,7 @@ function displayLibrary() {
         divRead.innerText = `Read: ${book.read ? 'Yes': 'No'}`;
 
         divLibrary.appendChild(divBook);
-        divBook.appendChild(divTitle);
-        divBook.appendChild(divAuthor);
-        divBook.appendChild(divPages);
-        divBook.appendChild(divRead);
+        divBook.append(divTitle, divAuthor, divPages, divRead);
     });
 }
 
