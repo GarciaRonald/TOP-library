@@ -1,5 +1,7 @@
 const bookLibrary = [];
 const divLibrary = document.getElementById('library');
+const btnAddBook = document.getElementById('add-new');
+const dialog = document.getElementById('modal');
 
 function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -44,5 +46,7 @@ function displayLibrary() {
 addBookToLibrary('Sorcerers Stone', 'JKR', 300, true);
 addBookToLibrary('Deathly Hollows', 'JKR', 750, true);
 addBookToLibrary('Cien años de soledad', 'García Márquez', false, false);
+
+btnAddBook.addEventListener('click', () => modal.showModal());
 
 displayLibrary();
