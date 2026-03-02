@@ -4,6 +4,10 @@ const btnAddBook = document.getElementById('add-new');
 const dialog = document.getElementById('modal');
 const btnCancel = document.getElementById('cancel');
 const form = document.getElementById('form');
+const inputTitle = document.getElementById('title');
+const inputAuthor = document.getElementById('author');
+const inputPages = document.getElementById('pages');
+const inputRead = document.getElementById('read');
 
 function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -49,6 +53,13 @@ function displayLibrary() {
     });
 }
 
+function clearFormData() {
+    inputTitle.value = '';
+    inputAuthor.value = '';
+    inputPages.value = '';
+    inputRead.checked = false;
+}
+
 function handleSubmit(e) {
     const title = e.target[1].value;
     const author = e.target[2].value;
@@ -62,9 +73,13 @@ addBookToLibrary('Deathly Hollows', 'JKR', 750, true);
 addBookToLibrary('Cien años de soledad', 'García Márquez', false, false);
 
 btnAddBook.addEventListener('click', () => modal.showModal());
-btnCancel.addEventListener('click', () => modal.close());
+btnCancel.addEventListener('click', () => {
+    modal.close();
+    clearFormData();
+});
 form.addEventListener('submit', e => {
     e.preventDefault();
     handleSubmit(e);
     modal.close();
+    clearFormData();
 });
