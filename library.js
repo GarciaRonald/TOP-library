@@ -72,6 +72,13 @@ function displayLibrary() {
             handleDelete(e);
         });
     });
+
+    const btnsToggle = document.querySelectorAll('.book-buttons button.toggle');
+    btnsToggle.forEach(btn => {
+        btn.addEventListener('click', e => {
+            handleToggle(e);
+        });
+    });
 }
 
 function handleDelete(e) {
@@ -80,6 +87,10 @@ function handleDelete(e) {
     const index = bookLibrary.findIndex(book => book.id === id);
     bookLibrary.splice(index, 1);
     displayLibrary();
+}
+
+function handleToggle(e) {
+    console.log('hello from toggle');
 }
 
 function clearFormData() {
