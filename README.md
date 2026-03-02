@@ -7,7 +7,7 @@ This project makes use of the following skills:
 ### HTML/CSS
 - Intermediate HTML and CSS
 - CSS Flexbox
-- <dialog> for creating a modal
+- Using the dialog tag for creating a modal
 - Forms
 
 ### JavaScript
@@ -16,4 +16,4 @@ This project makes use of the following skills:
 - Function constructors
 - DOM manipulation
 - Event listeners
-- using Array.Map to dynamically render content from an array of objects
+- Using Array.Map to dynamically render content from an array of objects
