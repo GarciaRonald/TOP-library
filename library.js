@@ -69,7 +69,10 @@ function displayLibrary() {
 }
 
 function handleDelete(e) {
-    console.log(e.target.className);
+    const id = e.target.className;
+    const index = bookLibrary.findIndex(book => book.id === id);
+    bookLibrary.splice(index, 1);
+    displayLibrary();
 }
 
 function clearFormData() {
