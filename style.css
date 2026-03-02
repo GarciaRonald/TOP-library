@@ -10,7 +10,7 @@
     width: 70%;
     margin: 4rem auto;
     padding: 1rem;
-    border: 1px solid lightgrey;
+    border: 10px solid lightgrey;
     border-radius: 1rem;
 }
 
@@ -27,4 +27,42 @@ h1 {
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 3px;
+}
+
+#library {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.book {
+    background-color: #87cefa22;
+    border: 1px solid darkcyan;
+    box-shadow: 4px 4px 10px darkgrey;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 300px;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-title {
+    border-bottom: solid blue;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 8rem;
+}
+
+.author {
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.book-buttons {
+    display: flex;
+    justify-content: space-around;
 }
