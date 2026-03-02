@@ -48,8 +48,16 @@ function displayLibrary() {
         divRead.className = 'book-read';
         divRead.innerText = `Read: ${book.read ? 'Yes': 'No'}`;
 
+        const divButtons = document.createElement('div');
+        divButtons.className = 'book-buttons';
+        const btnDelete = document.createElement('button');
+        btnDelete.type = 'button';
+        btnDelete.className = book.id;
+        btnDelete.innerText = 'Delete Book';
+
         divLibrary.appendChild(divBook);
-        divBook.append(divTitle, divAuthor, divPages, divRead);
+        divButtons.appendChild(btnDelete);
+        divBook.append(divTitle, divAuthor, divPages, divRead, divButtons);
     });
 }
 
