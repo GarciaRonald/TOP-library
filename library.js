@@ -82,15 +82,17 @@ function displayLibrary() {
 }
 
 function handleDelete(e) {
-    const id = e.target.className;
-    console.log(id);
+    const id = e.target.className.split(' ')[1];
     const index = bookLibrary.findIndex(book => book.id === id);
     bookLibrary.splice(index, 1);
     displayLibrary();
 }
 
 function handleToggle(e) {
-    console.log('hello from toggle');
+    const id = e.target.className.split(' ')[1];
+    const index = bookLibrary.findIndex(book => book.id === id);
+    bookLibrary[index].read = !bookLibrary[index].read;
+    displayLibrary();
 }
 
 function clearFormData() {
