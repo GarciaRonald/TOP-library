@@ -3,7 +3,7 @@ const divLibrary = document.getElementById('library');
 const btnAddBook = document.getElementById('add-new');
 const dialog = document.getElementById('modal');
 const btnCancel = document.getElementById('cancel');
-const form = document.getElementById('form');
+const btnSubmit = document.getElementById('submit');
 const inputTitle = document.getElementById('title');
 const inputAuthor = document.getElementById('author');
 const inputPages = document.getElementById('pages');
@@ -61,10 +61,10 @@ function clearFormData() {
 }
 
 function handleSubmit(e) {
-    const title = e.target[1].value;
-    const author = e.target[2].value;
-    const pages = e.target[3].value;
-    const read = e.target[4].checked;
+    const title = inputTitle.value;
+    const author = inputAuthor.value;
+    const pages = inputPages.value;
+    const read = inputRead.checked;
     addBookToLibrary(title, author, pages, read);
 }
 
@@ -77,7 +77,7 @@ btnCancel.addEventListener('click', () => {
     modal.close();
     clearFormData();
 });
-form.addEventListener('submit', e => {
+btnSubmit.addEventListener('click', e => {
     e.preventDefault();
     handleSubmit(e);
     modal.close();
