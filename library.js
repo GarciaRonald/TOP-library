@@ -21,6 +21,13 @@ function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     bookLibrary.push(newBook);
     displayLibrary();
+
+    const btnsDelete = document.querySelectorAll('.book-buttons button');
+    btnsDelete.forEach(btn => {
+        btn.addEventListener('click', e => {
+            handleDelete(e);
+        });
+    });
 }
 
 function displayLibrary() {
@@ -59,6 +66,10 @@ function displayLibrary() {
         divButtons.appendChild(btnDelete);
         divBook.append(divTitle, divAuthor, divPages, divRead, divButtons);
     });
+}
+
+function handleDelete(e) {
+    console.log(e.target.className);
 }
 
 function clearFormData() {
