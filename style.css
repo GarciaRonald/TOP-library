@@ -66,3 +66,16 @@ h1 {
     display: flex;
     justify-content: space-around;
 }
+
+button {
+    border-radius: 20px;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+}
+
+button:active {
+    border: 1px solid darkgray;
+    font-weight: normal;
+}
