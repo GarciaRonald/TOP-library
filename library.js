@@ -110,9 +110,10 @@ function handleSubmit(e) {
     addBookToLibrary(title, author, pages, read);
 }
 
-addBookToLibrary('Sorcerers Stone', 'JKR', 300, true);
-addBookToLibrary('Deathly Hollows', 'JKR', 750, true);
-addBookToLibrary('Cien años de soledad', 'García Márquez', false, false);
+// Sample Books
+addBookToLibrary('Think Like a Programmer', 'V. Anton Spraul', 233, false);
+addBookToLibrary('Witch King', 'Martha Wells', 414, false);
+addBookToLibrary('Cien Años de Soledad', 'Gabriel García Márquez', 496, true);
 
 btnAddBook.addEventListener('click', () => modal.showModal());
 btnCancel.addEventListener('click', () => {
