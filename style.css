@@ -79,3 +79,45 @@ button:active {
     border: 1px solid darkgray;
     font-weight: normal;
 }
+
+dialog {
+    border: 5px solid darkgray;
+    border-radius: 15px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+fieldset {
+    padding: 1rem;
+}
+
+legend {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.field {
+    padding: 5px;
+}
+
+.field:not(:last-child) {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: 500;
+}
+
+form .buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
