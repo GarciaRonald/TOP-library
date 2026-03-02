@@ -21,19 +21,12 @@ function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     bookLibrary.push(newBook);
     displayLibrary();
-
-    const btnsDelete = document.querySelectorAll('.book-buttons button');
-    btnsDelete.forEach(btn => {
-        btn.addEventListener('click', e => {
-            handleDelete(e);
-        });
-    });
 }
 
 function displayLibrary() {
     const divLib = document.getElementById('library');
     divLib.innerHTML = '';
-        
+    
     bookLibrary.map(book => {
         const divBook = document.createElement('div');
         divBook.id = book.id;
@@ -57,19 +50,33 @@ function displayLibrary() {
 
         const divButtons = document.createElement('div');
         divButtons.className = 'book-buttons';
+
+        const btnToggleRead = document.createElement('button');
+        btnToggleRead.type = 'button';
+        btnToggleRead.classList.add('toggle', book.id);
+        btnToggleRead.innerText = 'Mark as Read';
+
         const btnDelete = document.createElement('button');
         btnDelete.type = 'button';
-        btnDelete.className = book.id;
+        btnDelete.classList.add('delete', book.id);
         btnDelete.innerText = 'Delete Book';
 
         divLibrary.appendChild(divBook);
-        divButtons.appendChild(btnDelete);
+        divButtons.append(btnToggleRead, btnDelete);
         divBook.append(divTitle, divAuthor, divPages, divRead, divButtons);
+    });
+
+    const btnsDelete = document.querySelectorAll('.book-buttons button.delete');
+    btnsDelete.forEach(btn => {
+        btn.addEventListener('click', e => {
+            handleDelete(e);
+        });
     });
 }
 
 function handleDelete(e) {
     const id = e.target.className;
+    console.log(id);
     const index = bookLibrary.findIndex(book => book.id === id);
     bookLibrary.splice(index, 1);
     displayLibrary();
