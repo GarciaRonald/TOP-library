@@ -8,6 +8,7 @@ const inputTitle = document.getElementById('title');
 const inputAuthor = document.getElementById('author');
 const inputPages = document.getElementById('pages');
 const inputRead = document.getElementById('read');
+const form = document.getElementById('form');
 
 function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -120,9 +121,9 @@ btnCancel.addEventListener('click', () => {
     modal.close();
     clearFormData();
 });
-btnSubmit.addEventListener('click', e => {
+form.addEventListener('submit', e => {
     e.preventDefault();
-    handleSubmit(e);
+    handleSubmit();
     modal.close();
     clearFormData();
 });
